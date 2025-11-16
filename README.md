@@ -22,10 +22,7 @@ A comprehensive secure chat system implementing **Confidentiality, Integrity, Au
 - [Documentation](#-documentation)
 - [GitHub Repository](#-github-repository)
 - [Recommendations](#-recommendations)
-- [Troubleshooting](#-troubleshooting)
 - [Protocol Messages](#-protocol-messages)
-- [Contributing](#-contributing)
-- [License](#-license)
 - [Author](#-author)
 
 ---
@@ -170,9 +167,9 @@ Expected Output:
 
 ## 🎮 Usage
 
-1. **Authentication Process**
+# Authentication Process
 
-Client Connection
+1. **Client Connection**
 
 ```text
 🔐 Authentication
@@ -181,7 +178,7 @@ Email: user@example.com
 Password: ********
 ```
     
-2 **Secure Handshake**
+2. **Secure Handshake**
 
 - Certificate exchange and validation
 - Diffie-Hellman key exchange
@@ -205,8 +202,7 @@ You: Hello, this is a secure message!
 
 ```text
 python run_tests.py
-```text
-
+```
 
 Expected Output
 ```text
@@ -215,6 +211,27 @@ Expected Output
 ✅ Overall: 11/11 tests passed (100%)
 ⏱️ Execution Time: 1.953 seconds
 ```
+
+Sample Output
+```text
+🧪 Running Secure Chat System Tests
+test_expired_certificate ... ✅ PASSED
+test_self_signed_certificate ... ✅ PASSED
+test_valid_certificate ... ✅ PASSED
+test_aes_encryption_decryption ... ✅ PASSED
+test_diffie_hellman_key_exchange ... ✅ PASSED
+test_message_integrity_with_rsa ... ✅ PASSED
+test_password_hashing ... ✅ PASSED
+
+🔒 Running Security Tests
+🔍 Invalid Certificate Test ... ✅ PASSED
+🔍 Tampering Detection Test ... ✅ PASSED
+🔍 Replay Attack Test ... ✅ PASSED
+🔍 Non-Repudiation Test ... ✅ PASSED
+
+🎉 ALL TESTS PASSED!
+```
+
 
 ---
 
