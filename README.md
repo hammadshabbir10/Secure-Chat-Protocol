@@ -100,30 +100,38 @@ Secure-Chat-Protocol/
 
 1. **Clone the Repository**
 
+```text
 git clone https://github.com/hammadshabbir10/Secure-Chat-Protocol.git
 cd Secure-Chat-Protocol
-
+```
 
 2. **Create Virtual Environment**
 
+```text
 python -m venv securechat-env
 source securechat-env/bin/activate
+```
 
 3. **Install Dependencies**
 
+```text
 pip install -r requirements.txt
+```
 
 4. **Database Setup**
 
+```text
 sudo systemctl start mysql
 mysql -u root -p < database/schema.sql
+```
 
 5. **Generate Certificates**
 
+```text
 python scripts/gen_ca.py
 python scripts/gen_cert.py "SecureChat Server" server
 python scripts/gen_cert.py "SecureChat Client" client
-
+```
 
 ---
 
@@ -131,13 +139,12 @@ python scripts/gen_cert.py "SecureChat Client" client
 
 1. **Start the Server**
 
+```text
 python run_server.py
-
+```
 
 Expected Output:
-
 ```text
-
 🚀 Starting Secure Chat Server...
 📍 Server running on localhost:8080
 ✅ Server certificates loaded
@@ -146,18 +153,18 @@ Expected Output:
 
 2. **Start the Client**
 
+```text
 python run_client.py
-
+```
 
 Expected Output:
-
 ```text
-
 🚀 Starting Secure Chat Client...
 📍 Connecting to localhost:8080
 ✅ Client certificates loaded
 🔗 Connected to server localhost:8080
 ```
+
 
 ---
 
@@ -168,16 +175,13 @@ Expected Output:
 Client Connection
 
 ```text
-
 🔐 Authentication
 Register or Login? (r/l): l
 Email: user@example.com
 Password: ********
 ```
     
----
-
-## Secure Handshake
+2 **Secure Handshake**
 
 - Certificate exchange and validation
 - Diffie-Hellman key exchange
@@ -185,29 +189,32 @@ Password: ********
 - Session key establishment
 
 
----
-
-## Secure Chat
+3. **Secure Chat**
 
 ```text
-
 💬 Chat started! Type your messages (type 'exit' to quit)
 You: Hello, this is a secure message!
 📨 Server: Hello, this is a secure message!
 ```
 
+
+---
+
+
 ## 🧪 Testing
 
-- python run_tests.py
+```text
+python run_tests.py
+```text
 
 
-# Test Results
-
-- ✅ Unit Tests: 7/7 passed
-- ✅ Security Tests: 4/4 passed
-- ✅ Overall: 11/11 tests passed (100%)
-- ⏱️ Execution Time: 1.953 seconds
-
+Expected Output
+```text
+✅ Unit Tests: 7/7 passed
+✅ Security Tests: 4/4 passed
+✅ Overall: 11/11 tests passed (100%)
+⏱️ Execution Time: 1.953 seconds
+```
 
 ---
 
@@ -237,7 +244,6 @@ You: Hello, this is a secure message!
 Documentation Structure
 
 ```text
-
 docs/
 ├── 📂 wireshark/
 ├── 📂 test_results/
@@ -248,39 +254,41 @@ docs/
 
 Repository: https://github.com/hammadshabbir10/Secure-Chat-Protocol
 
-- git clone https://github.com/hammadshabbir10/Secure-Chat-Protocol.git
-- cd Secure-Chat-Protocol
+```text
+git clone https://github.com/hammadshabbir10/Secure-Chat-Protocol.git
+cd Secure-Chat-Protocol
+```
 
 
 ## 💡 Recommendations
 
 # Development Approach
 
-# Phase 1: Planning & Design
+Phase 1: Planning & Design
 
 - Define security requirements
 - Design protocol flows
 - Plan certificate management
 
-# Phase 2: Core Implementation
+Phase 2: Core Implementation
 
 - Implement crypto utilities
 - Set up Certificate Authority
 - Create unit tests
 
-# Phase 3: Protocol Development
+Phase 3: Protocol Development
 
 - Implement certificate exchange
 - Build Diffie-Hellman key exchange
 - Add user authentication
 
-# Phase 4: Advanced Features
+Phase 4: Advanced Features
 
 - Create transcript system
 - Implement digital receipts 
 - Build tamper detection
 
-# Phase 5: Testing & Documentation
+Phase 5: Testing & Documentation
 
 - Comprehensive testing
 - Gather evidence
@@ -300,7 +308,7 @@ Repository: https://github.com/hammadshabbir10/Secure-Chat-Protocol
 
 
 ## Client Hello:
-
+```text
 json
 
 {
@@ -308,8 +316,11 @@ json
   "client_cert": "BASE64_ENCODED_CERT",
   "nonce": "RANDOM_NONCE"
 }
+```
+
 
 ## Server Hello:
+```text
 json
 
 {
@@ -317,9 +328,11 @@ json
   "server_cert": "BASE64_ENCODED_CERT",
   "nonce": "RANDOM_NONCE"
 }
+```
 
 
 ## Encrypted Message:
+```text
 json
 
 {
@@ -329,6 +342,7 @@ json
   "ct": "BASE64_CIPHERTEXT",
   "sig": "BASE64_SIGNATURE"
 }
+```
 
 
 ## 👨‍💻 Author
